@@ -33,9 +33,16 @@ class TVController:
             return self.CHANNELS[self.set_channels]
 
     def previous_channel(self):
-        self.set_channels -= 1
-        print(self.CHANNELS[self.set_channels])
-        return self.CHANNELS[self.set_channels]
+        if self.set_channels > -len(CHANNELS):
+            self.set_channels -= 1
+            print(self.CHANNELS[self.set_channels])
+            return self.CHANNELS[self.set_channels]
+        else:
+            self.set_channels = 0
+            self.set_channels -= 1
+            print(self.CHANNELS[self.set_channels])
+            return self.CHANNELS[self.set_channels]
+
 
     def current_channel(self):
         print(self.CHANNELS[self.set_channels])
@@ -55,11 +62,19 @@ class TVController:
 
 
 controller = TVController(CHANNELS)
-
 controller.first_channel()
 controller.last_channel()
 controller.turn_channel(1)
 controller.next_channel()
+controller.previous_channel()
+controller.previous_channel()
+controller.previous_channel()
+controller.previous_channel()
+controller.previous_channel()
+controller.previous_channel()
+controller.previous_channel()
+controller.previous_channel()
+controller.previous_channel()
 controller.previous_channel()
 controller.current_channel()
 controller.exists("BBC1")
