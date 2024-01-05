@@ -14,6 +14,6 @@ def bubble_sort(data_collection):
                 data_collection[j - 1] = temp
 
 
-my_list = [64, 34, 25, 12, 22, 11, 90]
+my_list = [53, 25, 21, 12, 42, 15, 60]
 bubble_sort(my_list)
 print(my_list)
